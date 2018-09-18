@@ -16,14 +16,14 @@ class CartaTest extends TestCase {
         $this->assertTrue(isset($carta));
 	$this->assertEquals($carta->tipo(),"Española");	
 	$this->assertEquals($carta->palo(),"Copa");
-	$this->assertEquals($cartas->numero(),4);
+	$this->assertEquals($carta->numero(),4);
     }
     public function testCartaPoker() {
         $carta = new Carta("Poker","Copa",4);
         $this->assertTrue(isset($carta));
 	$this->assertEquals($carta->tipo(),"Poker");	
 	$this->assertEquals($carta->palo(),"Copa");
-	$this->assertEquals($cartas->numero(),4);
+	$this->assertEquals($carta->numero(),4);
     }
 
 
