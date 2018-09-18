@@ -14,7 +14,7 @@ class Carta {
 
 
   public function palo() {
-	return $this->palo();
+	return $this->palo;
   }
 
   public function tipo() {
