@@ -2,9 +2,11 @@
 
 namespace TDD;
 
-class Mazo {
+class Mazo
+{
 
-  public function mezclar() {
-    return TRUE;
-  }
+    public function mezclar()
+    {
+        return true;
+    }
 }
