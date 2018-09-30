@@ -25,7 +25,7 @@ class MazoTest extends TestCase {
     public function testCortar() {
 	    $mazo= new Mazo("Español");
 	    $copia = $mazo;
-	    $mazo->cortar();
+        $this->assertTrue($mazo->cortar());
         $this->assertNotEquals($mazo->ObtenerTodas(),$copia->ObtenerTodas());
 }
 
