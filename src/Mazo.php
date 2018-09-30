@@ -81,8 +81,59 @@ class Mazo
 
     public function mezclar()
     {
-        if (!count($this->cartas)) {return false;}
+        if (!count($this->cartas)) {
+            return false;
+        }
         shuffle($this->cartas);
         return true;
     }
+    public function cortar()
+    {
+        $mitad = array();
+        $j = 0;
+        $random = rand(1, $this->cant_cart);
+        if (!count($this->cartas)) {
+            return false;
+        }
+        for($i = $this->cant_cart-1; $i > $random; $i--)
+        {
+            $mitad[$j]=$this->cartas[$i];
+            unset($this->cartas[$i]);
+            $j++;
+        }
+        $this->cartas=array_merge($mitad,$this->cartas);
+        return true;
+    }
+    public function ObtenerTodas(){
+        return $this->cartas;
+      }
+  
+      public function ConCart(){
+        return $this->cant_cart;
+      }
+  
+      public function ObtenerCarta(){
+        $carta = $this->cartas[$this->cant_cart-1];
+        unset($this->cartas[$this->cant_cart-1]);
+        $this->cant_cart--;
+        return $carta;
+      }
+  
+      public function TieneCartas(){
+        if($this->cant_cart>0){
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
+      }
+
+      public function Agregar($carta){
+        if($carta instanceof Carta){
+          $this->cartas[$this->cant_cart] = $carta;
+          $this->cant_cart++;
+          return TRUE;
+        }
+        return FALSE;
+      }
 }
