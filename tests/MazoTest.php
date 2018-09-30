@@ -37,7 +37,7 @@ class MazoTest extends TestCase {
 	    $mazo= new Mazo("Español");
 	    $carta= $mazo->ObtenerCarta();
         $this->assertEquals($carta->palo(),"Joker");
-        $this->assertEquals($carta->tipo(),"Español");
+        $this->assertEquals($carta->tipo(),"Española");
         $this->assertEquals($carta->numero(),2);
 }
     public function testIndicarSiTiene(){

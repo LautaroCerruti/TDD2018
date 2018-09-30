@@ -84,17 +84,17 @@ class Mazo
         if (!count($this->cartas)) {
             return false;
         }
-        shuffle($this->cartas);
+        $this->cartas=shuffle($this->cartas);
         return true;
     }
     public function cortar()
     {
         $mitad = array();
         $j = 0;
-        $random = rand(1, $this->cant_cart);
         if (!count($this->cartas)) {
-            return false;
+          return false;
         }
+        $random = rand(1, $this->cant_cart);
         for($i = $this->cant_cart-1; $i > $random; $i--)
         {
             $mitad[$j]=$this->cartas[$i];
