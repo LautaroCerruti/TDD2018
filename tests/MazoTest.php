@@ -26,7 +26,7 @@ class MazoTest extends TestCase {
 	    $mazo= new Mazo("Español");
 	    $copia = $mazo;
 	    $mazo->cortar();
-        $this->assertFalse($mazo==$copia);
+        $this->assertFalse($mazo->ObtenerTodas()==$copia->ObtenerTodas());
 }
 
     public function testContarCartas() {
