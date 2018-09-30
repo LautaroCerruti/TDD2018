@@ -17,16 +17,16 @@ class MazoTest extends TestCase {
 
     public function testMezclable() {
         $mazo = new Mazo("Poker");
-        $copia = $mazo;
+        $copia = $mazo->ObtenerTodas();
         $this->assertTrue($mazo->mezclar());
-        $this->assertNotEquals($mazo->ObtenerTodas(),$copia->ObtenerTodas());
+        $this->assertNotEquals($mazo->ObtenerTodas(),$copia);
     }
 
     public function testCortar() {
 	    $mazo= new Mazo("Español");
-	    $copia = $mazo;
+	    $copia = $mazo->ObtenerTodas();
 	    $mazo->cortar();
-        $this->assertNotEquals($mazo->ObtenerTodas(),$copia->ObtenerTodas());
+        $this->assertNotEquals($mazo->ObtenerTodas(),$copia);
 }
 
     public function testContarCartas() {

@@ -98,7 +98,7 @@ class Mazo
         for($i = $this->cant_cart-1; $i > $random; $i--)
         {
             $mitad[$j]=$this->cartas[$i];
-            unset($this->cartas[$i]);
+            unset($this->cartas[$i]); 
             $j++;
         }
         $this->cartas=array_merge($mitad,$this->cartas);
