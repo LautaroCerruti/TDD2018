@@ -19,14 +19,14 @@ class MazoTest extends TestCase {
         $mazo = new Mazo("Poker");
         $copia = $mazo;
         $this->assertTrue($mazo->mezclar());
-        $this->assertFalse($mazo->ObtenerTodas()==$copia->ObtenerTodas());
+        $this->assertNotEquals($mazo->ObtenerTodas(),$copia->ObtenerTodas());
     }
 
     public function testCortar() {
 	    $mazo= new Mazo("Español");
 	    $copia = $mazo;
 	    $mazo->cortar();
-        $this->assertFalse($mazo->ObtenerTodas()==$copia->ObtenerTodas());
+        $this->assertNotEquals($mazo->ObtenerTodas(),$copia->ObtenerTodas());
 }
 
     public function testContarCartas() {
