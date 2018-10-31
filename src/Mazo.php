@@ -75,6 +75,7 @@ class Mazo
                 $this->cartas[$this->cant_cart] = new Carta("Poker", "Pica", "K");
                 $this->cant_cart++;
                 break;
+            case "Vacio": $this->cant_cart=0;
             default:break;
         }
     }

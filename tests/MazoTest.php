@@ -55,4 +55,12 @@ class MazoTest extends TestCase {
         $mazo->Agregar($carta);
         $this->assertEquals($mazo->ConCart(),51);
     }
+
+    public function testFalla(){
+        $mazo = new Mazo("G");
+        $mazo = new Mazo("Vacio");
+        $this->assertFalse($mazo->agregar(4));
+        $this->assertFalse($mazo->cortar());
+        $this->assertFalse($mazo->mezclar());
+    }
 }
