@@ -8,9 +8,7 @@ class CartaTest extends TestCase
 {
 
     /**
-     * Valida la creacion de una carta.
-    Ver Palo
-    Ver numero
+     * Valida la creacion de una carta tipo español.
      */
     public function testCartaEspañola()
     {
@@ -20,6 +18,10 @@ class CartaTest extends TestCase
         $this->assertEquals($carta->palo(), "Copa");
         $this->assertEquals($carta->numero(), 4);
     }
+
+    /**
+     * Valida la creacion de una carta tipo poker.
+     */
     public function testCartaPoker()
     {
         $carta = new Carta("Poker", "Copa", 4);
