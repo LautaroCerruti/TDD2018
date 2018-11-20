@@ -12,29 +12,41 @@ class Mazo
     {
         switch ($tipo) {
             case "Español":
-                for ($i = 1; $i < 13; $i++) {
-                    $this->cartas[$this->cant_cart] = new Carta("Española", "Oro", $i);
-                    $this->cant_cart++;
-                }
-                for ($i = 1; $i < 13; $i++) {
-                    $this->cartas[$this->cant_cart] = new Carta("Española", "Copa", $i);
-                    $this->cant_cart++;
-                }
-                for ($i = 1; $i < 13; $i++) {
-                    $this->cartas[$this->cant_cart] = new Carta("Española", "Basto", $i);
-                    $this->cant_cart++;
-                }
-                for ($i = 1; $i < 13; $i++) {
-                    $this->cartas[$this->cant_cart] = new Carta("Española", "Espada", $i);
-                    $this->cant_cart++;
-                }
-                $this->cartas[$this->cant_cart] = new Carta("Española", "Joker", 1);
-                $this->cant_cart++;
-                $this->cartas[$this->cant_cart] = new Carta("Española", "Joker", 2);
-                $this->cant_cart++;
+                $this->crearEspanol();
                 break;
             case "Poker":
-                for ($i = 1; $i < 11; $i++) {
+                $this->crearPoker();
+                break;
+            case "Vacio": $this->cant_cart=0;
+            default:break;
+        }
+    }
+    
+    public function crearEspanol(){
+        for ($i = 1; $i < 13; $i++) {
+            $this->cartas[$this->cant_cart] = new Carta("Española", "Oro", $i);
+            $this->cant_cart++;
+        }
+        for ($i = 1; $i < 13; $i++) {
+            $this->cartas[$this->cant_cart] = new Carta("Española", "Copa", $i);
+            $this->cant_cart++;
+        }
+        for ($i = 1; $i < 13; $i++) {
+             $this->cartas[$this->cant_cart] = new Carta("Española", "Basto", $i);
+             $this->cant_cart++;
+        }
+        for ($i = 1; $i < 13; $i++) {
+            $this->cartas[$this->cant_cart] = new Carta("Española", "Espada", $i);
+            $this->cant_cart++;
+        }
+        $this->cartas[$this->cant_cart] = new Carta("Española", "Joker", 1);
+        $this->cant_cart++;
+        $this->cartas[$this->cant_cart] = new Carta("Española", "Joker", 2);
+        $this->cant_cart++;
+    }
+    
+    public function crearPoker(){
+        for ($i = 1; $i < 11; $i++) {
                     $this->cartas[$this->cant_cart] = new Carta("Poker", "Diamante", $i);
                     $this->cant_cart++;
                 }
@@ -74,10 +86,6 @@ class Mazo
                 $this->cant_cart++;
                 $this->cartas[$this->cant_cart] = new Carta("Poker", "Pica", "K");
                 $this->cant_cart++;
-                break;
-            case "Vacio": $this->cant_cart=0;
-            default:break;
-        }
     }
 
     public function mezclar()
