@@ -19,6 +19,7 @@ class Mazo
                 return;
             case "Vacio":
                 $this->cant_cart = 0;
+                return;
             default:
                 break;
         }
