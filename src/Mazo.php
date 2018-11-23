@@ -115,33 +115,33 @@ class Mazo
     }
     public function ObtenerTodas(){
         return $this->cartas;
-      }
+        }
   
-      public function ConCart(){
+        public function ConCart(){
         return $this->cant_cart;
-      }
+        }
   
-      public function ObtenerCarta(){
+        public function ObtenerCarta(){
         $carta = $this->cartas[$this->cant_cart-1];
         unset($this->cartas[$this->cant_cart-1]);
         $this->cant_cart--;
         return $carta;
-      }
+        }
   
-      public function TieneCartas(){
+        public function TieneCartas(){
         if($this->cant_cart>0){
             return TRUE;
         } else{
             return FALSE;
         }
-      }
+        }
 
-      public function Agregar($carta){
+        public function Agregar($carta){
         if($carta instanceof Carta){
-          $this->cartas[$this->cant_cart] = $carta;
-          $this->cant_cart++;
-          return TRUE;
+            $this->cartas[$this->cant_cart] = $carta;
+            $this->cant_cart++;
+            return TRUE;
         }
         return FALSE;
-      }
+        }
 }
