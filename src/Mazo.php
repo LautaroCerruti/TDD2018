@@ -104,40 +104,40 @@ class Mazo
             return false;
         }
         $random = rand(1, $this->cant_cart);
-        for($i = $this->cant_cart-1; $i > $random; $i--)
+        for ($i = $this->cant_cart-1; $i > $random; $i--)
         {
-            $mitad[$j]=$this->cartas[$i];
+            $mitad[$j] = $this->cartas[$i];
             unset($this->cartas[$i]); 
             $j++;
         }
-        $this->cartas=array_merge($mitad,$this->cartas);
+        $this->cartas = array_merge($mitad, $this->cartas);
         return true;
     }
-    public function ObtenerTodas(){
+    public function ObtenerTodas() {
         return $this->cartas;
         }
   
-        public function ConCart(){
+        public function ConCart() {
         return $this->cant_cart;
         }
   
-        public function ObtenerCarta(){
+        public function ObtenerCarta() {
         $carta = $this->cartas[$this->cant_cart-1];
         unset($this->cartas[$this->cant_cart-1]);
         $this->cant_cart--;
         return $carta;
         }
   
-        public function TieneCartas(){
-        if($this->cant_cart>0){
+        public function TieneCartas() {
+        if ($this->cant_cart > 0) {
             return TRUE;
-        } else{
+        } else {
             return FALSE;
         }
         }
 
-        public function Agregar($carta){
-        if($carta instanceof Carta){
+        public function Agregar($carta) {
+        if ($carta instanceof Carta) {
             $this->cartas[$this->cant_cart] = $carta;
             $this->cant_cart++;
             return TRUE;
