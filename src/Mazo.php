@@ -17,12 +17,12 @@ class Mazo
             case "Poker":
                 $this->crearPoker();
                 break;
-            case "Vacio": $this->cant_cart=0;
+            case "Vacio": $this->cant_cart = 0;
             default:break;
         }
     }
     
-    public function crearEspanol(){
+    public function crearEspanol() {
         for ($i = 1; $i < 13; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Española", "Oro", $i);
             $this->cant_cart++;
@@ -32,8 +32,8 @@ class Mazo
             $this->cant_cart++;
         }
         for ($i = 1; $i < 13; $i++) {
-             $this->cartas[$this->cant_cart] = new Carta("Española", "Basto", $i);
-             $this->cant_cart++;
+                $this->cartas[$this->cant_cart] = new Carta("Española", "Basto", $i);
+                $this->cant_cart++;
         }
         for ($i = 1; $i < 13; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Española", "Espada", $i);
@@ -45,7 +45,7 @@ class Mazo
         $this->cant_cart++;
     }
     
-    public function crearPoker(){
+    public function crearPoker() {
         for ($i = 1; $i < 11; $i++) {
                     $this->cartas[$this->cant_cart] = new Carta("Poker", "Diamante", $i);
                     $this->cant_cart++;
@@ -93,7 +93,7 @@ class Mazo
         if (!count($this->cartas)) {
             return false;
         }
-        $this->cartas=shuffle($this->cartas);
+        $this->cartas = shuffle($this->cartas);
         return true;
     }
     public function cortar()
@@ -101,48 +101,47 @@ class Mazo
         $mitad = array();
         $j = 0;
         if (!count($this->cartas)) {
-          return false;
+            return false;
         }
         $random = rand(1, $this->cant_cart);
-        for($i = $this->cant_cart-1; $i > $random; $i--)
+        for ($i = $this->cant_cart-1; $i > $random; $i--)
         {
-            $mitad[$j]=$this->cartas[$i];
+            $mitad[$j] = $this->cartas[$i];
             unset($this->cartas[$i]); 
             $j++;
         }
-        $this->cartas=array_merge($mitad,$this->cartas);
+        $this->cartas = array_merge($mitad, $this->cartas);
         return true;
     }
-    public function ObtenerTodas(){
+    public function ObtenerTodas() {
         return $this->cartas;
-      }
+        }
   
-      public function ConCart(){
+        public function ConCart() {
         return $this->cant_cart;
-      }
+        }
   
-      public function ObtenerCarta(){
+        public function ObtenerCarta() {
         $carta = $this->cartas[$this->cant_cart-1];
         unset($this->cartas[$this->cant_cart-1]);
         $this->cant_cart--;
         return $carta;
-      }
-  
-      public function TieneCartas(){
-        if($this->cant_cart>0){
-            return TRUE;
         }
-        else{
+  
+        public function TieneCartas() {
+        if ($this->cant_cart > 0) {
+            return TRUE;
+        } else {
             return FALSE;
         }
-      }
+        }
 
-      public function Agregar($carta){
-        if($carta instanceof Carta){
-          $this->cartas[$this->cant_cart] = $carta;
-          $this->cant_cart++;
-          return TRUE;
+        public function Agregar($carta) {
+        if ($carta instanceof Carta) {
+            $this->cartas[$this->cant_cart] = $carta;
+            $this->cant_cart++;
+            return TRUE;
         }
         return FALSE;
-      }
+        }
 }
