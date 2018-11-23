@@ -19,9 +19,9 @@ class MazoTest extends TestCase {
      */
     public function testMezclable() {
         $mazo = new Mazo("Poker");
-        $copia = $mazo->ObtenerTodas();
+        $copia = $mazo->obtenerTodas();
         $this->assertTrue($mazo->mezclar());
-        $this->assertNotEquals($mazo->ObtenerTodas(),$copia);
+        $this->assertNotEquals($mazo->obtenerTodas(),$copia);
     }
 
     /**
@@ -29,9 +29,9 @@ class MazoTest extends TestCase {
      */
     public function testCortar() {
 	    $mazo= new Mazo("Español");
-        $copia = $mazo->ObtenerTodas();
+        $copia = $mazo->obtenerTodas();
         $this->assertTrue($mazo->cortar());
-        $this->assertNotEquals($mazo->ObtenerTodas(),$copia);
+        $this->assertNotEquals($mazo->obtenerTodas(),$copia);
 }
 
     /**
@@ -39,7 +39,7 @@ class MazoTest extends TestCase {
      */
     public function testContarCartas() {
 	    $mazo= new Mazo("Español");
-        $this->assertEquals($mazo->ConCart(),50);
+        $this->assertEquals($mazo->conCart(),50);
 }
 
     /**
@@ -47,7 +47,7 @@ class MazoTest extends TestCase {
      */
     public function testObtenerCarta(){
 	    $mazo= new Mazo("Español");
-	    $carta= $mazo->ObtenerCarta();
+	    $carta= $mazo->obtenerCarta();
         $this->assertEquals($carta->palo(),"Joker");
         $this->assertEquals($carta->tipo(),"Española");
         $this->assertEquals($carta->numero(),2);
@@ -58,11 +58,11 @@ class MazoTest extends TestCase {
      */
     public function testIndicarSiTiene(){
         $mazo = new Mazo("Español");
-        $this->assertEquals($mazo->TieneCartas(),true);
+        $this->assertEquals($mazo->tieneCartas(),true);
         for($i=0;$i<50;$i++){
-            $mazo->ObtenerCarta();
+            $mazo->obtenerCarta();
         }
-        $this->assertEquals($mazo->TieneCartas(),false);
+        $this->assertEquals($mazo->tieneCartas(),false);
     }
     
     /**
@@ -71,8 +71,8 @@ class MazoTest extends TestCase {
     public function testAgregarCarta(){
         $mazo = new Mazo("Español");
         $carta = new Carta("Española", "Copa", 4);
-        $mazo->Agregar($carta);
-        $this->assertEquals($mazo->ConCart(),51);
+        $mazo->agregarCarta($carta);
+        $this->assertEquals($mazo->conCart(),51);
     }
 
     /**
@@ -81,7 +81,7 @@ class MazoTest extends TestCase {
     public function testFalla(){
         $mazo = new Mazo("G");
         $mazo = new Mazo("Vacio");
-        $this->assertFalse($mazo->agregar(4));
+        $this->assertFalse($mazo->agregarCarta(4));
         $this->assertFalse($mazo->cortar());
         $this->assertFalse($mazo->mezclar());
     }

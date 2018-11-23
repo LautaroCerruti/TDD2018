@@ -38,7 +38,6 @@ class Mazo
         for ($i = 1; $i < 13; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Española", "Basto", $i);
             $this->cant_cart++;
-
         }
         for ($i = 1; $i < 13; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Española", "Espada", $i);
@@ -120,17 +119,17 @@ class Mazo
         return true;
     }
 
-    public function ObtenerTodas()
+    public function obtenerTodas()
     {
         return $this->cartas;
     }
 
-    public function ConCart()
+    public function conCart()
     {
         return $this->cant_cart;
     }
 
-    public function ObtenerCarta()
+    public function obtenerCarta()
     {
         $carta = $this->cartas[$this->cant_cart - 1];
         unset($this->cartas[$this->cant_cart - 1]);
@@ -138,7 +137,7 @@ class Mazo
         return $carta;
     }
 
-    public function TieneCartas()
+    public function tieneCartas()
     {
         if ($this->cant_cart > 0) {
             return true;
@@ -147,7 +146,7 @@ class Mazo
         }
     }
 
-    public function Agregar($carta)
+    public function agregarCarta($carta)
     {
         if ($carta instanceof Carta) {
             $this->cartas[$this->cant_cart] = $carta;
