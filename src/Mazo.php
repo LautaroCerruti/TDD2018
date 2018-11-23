@@ -26,6 +26,7 @@ class Mazo
 
     public function crearEspanol()
     {
+
         for ($i = 1; $i < 13; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Española", "Oro", $i);
             $this->cant_cart++;
@@ -37,6 +38,7 @@ class Mazo
         for ($i = 1; $i < 13; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Española", "Basto", $i);
             $this->cant_cart++;
+
         }
         for ($i = 1; $i < 13; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Española", "Espada", $i);
@@ -80,6 +82,7 @@ class Mazo
         $this->cant_cart++;
         $this->cartas[$this->cant_cart] = new Carta("Poker", "Trebol", "K");
         $this->cant_cart++;
+
         for ($i = 1; $i < 11; $i++) {
             $this->cartas[$this->cant_cart] = new Carta("Poker", "Pica", $i);
             $this->cant_cart++;
@@ -116,6 +119,7 @@ class Mazo
         $this->cartas = array_merge($mitad, $this->cartas);
         return true;
     }
+
     public function ObtenerTodas()
     {
         return $this->cartas;
@@ -152,4 +156,5 @@ class Mazo
         }
         return false;
     }
+
 }
